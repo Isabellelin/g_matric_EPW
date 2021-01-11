@@ -1,0 +1,23 @@
+forrtl: severe (59): list-directed I/O syntax error, unit -131, file /THL8/home/jwluo/test/03-si-mob/01_g_matrix/../phonons_soc/save/si.dyn_q1.xml
+Image              PC                Routine            Line        Source             
+epw.x              0000000000F84FBE  Unknown               Unknown  Unknown
+epw.x              0000000000FBF430  Unknown               Unknown  Unknown
+epw.x              0000000000FBD792  Unknown               Unknown  Unknown
+epw.x              0000000000D1DC24  xmltools_mp_readt         761  xmltools.f90
+epw.x              000000000063A7DD  io_dyn_mat_mp_rea         480  io_dyn_mat.f90
+epw.x              00000000004DE960  dynmat_asr_               267  dynmat_asr.f90
+epw.x              0000000000433E54  elphon_shuffle_wr         554  elphon_shuffle_wrap.f90
+epw.x              0000000000408062  MAIN__                    145  epw.f90
+epw.x              000000000040741E  Unknown               Unknown  Unknown
+libc-2.17.so       00002ADE7A7B2B15  __libc_start_main     Unknown  Unknown
+epw.x              0000000000407329  Unknown               Unknown  Unknown
+yhrun: error: cn1140: task 0: Exited with exit code 59
+yhrun: First task exited 60s ago
+yhrun: tasks 1-71: running
+yhrun: task 0: exited abnormally
+yhrun: Terminating job step 2813597.0
+slurmstepd: error: *** STEP 2813597.0 ON cn1140 CANCELLED AT 2021-01-11T23:03:03 ***
+yhrun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+yhrun: error: cn1140: tasks 1-23: Killed
+yhrun: error: cn1142: tasks 48-71: Killed
+yhrun: error: cn1141: tasks 24-47: Killed

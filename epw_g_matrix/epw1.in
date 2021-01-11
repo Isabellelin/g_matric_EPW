@@ -1,0 +1,86 @@
+--
+&inputepw
+  prefix      = 'si'
+  amass(1)    = 28.0855
+  outdir      = './'
+
+  iverbosity  = 0
+
+  elph        = .true.
+  epbwrite    = .true.
+  epbread     = .false.
+  epwwrite    = .true.
+  epwread     = .false.
+
+  nbndsub     =  16
+
+  wannierize  = .true.
+  num_iter    = 300
+  ! (2) Valence + conduction bands
+  dis_froz_max    =  -2.0 !6.5
+  dis_win_max     =  30.0
+  !! Atom-centred sp3-orbitals
+  proj(1)     = 'Si:sp3'
+
+  wdata(1) = 'bands_plot = .true.'
+  wdata(2) = 'begin kpoint_path'
+  wdata(3) = 'L 0.50 0.50 0.50 G 0.00 0.00 0.00'
+  wdata(4) = 'G 0.00 0.00 0.00 X 0.00 0.50 0.50'
+  wdata(5) = 'end kpoint_path'
+  wdata(6) = 'bands_plot_format = gnuplot'
+
+  !elinterp    = .true.
+  !phinterp    = .true.
+  !tshuffle2   = .true.
+  !tphases     = .false.
+  
+  elecselfen  = .false.
+  prtgkk      = .true.
+  phonselfen  = .false.
+  a2f         = .false.
+
+ 
+  fsthick     = 3    ! 1.36056981 ! eV
+  temps      = 300 ! K (same as PRB 76, 165108)
+
+  degaussw    = 0.05 ! eV
+
+  dvscf_dir   = '../phonons_soc/save'
+
+  efermi_read  = .true.
+
+  fermi_energy = 6.402
+
+  band_plot   = .false.
+  filqf        = '/THL8/home/jwluo/filepool/meshes/GXWLGK_50.txt'
+  nkf1        = 1
+  nkf2        = 1
+  nkf3        = 1
+
+  nk1         = 6
+  nk2         = 6
+  nk3         = 6
+
+  nq1         = 6
+  nq2         = 6
+  nq3         = 6
+
+ /
+
+      16 cartesian
+          0.000000000   0.000000000   0.000000000
+         -0.166666667   0.166666667  -0.166666667
+         -0.333333333   0.333333333  -0.333333333
+          0.500000000  -0.500000000   0.500000000
+          0.000000000   0.333333333   0.000000000
+         -0.166666667   0.500000000  -0.166666667
+          0.666666667  -0.333333333   0.666666667
+          0.500000000  -0.166666667   0.500000000
+          0.333333333   0.000000000   0.333333333
+         0.000000000   0.666666667   0.000000000
+         0.833333333  -0.166666667   0.833333333
+         0.666666667  -0.000000000   0.666666667
+         0.000000000  -1.000000000   0.000000000
+         0.666666667  -0.333333333   1.000000000
+         0.500000000  -0.166666667   0.833333333
+        -0.333333333  -1.000000000   0.000000000

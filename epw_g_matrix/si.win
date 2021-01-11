@@ -1,0 +1,16 @@
+begin projections
+ Si:sp3
+end projections
+num_wann =  16
+iprint =   2
+dis_win_max =    30.000000000000
+dis_froz_max =    -2.000000000000
+num_iter =     300
+write_bvec = .true.
+ bands_plot = .true.
+ begin kpoint_path
+ L 0.50 0.50 0.50 G 0.00 0.00 0.00
+ G 0.00 0.00 0.00 X 0.00 0.50 0.50
+ end kpoint_path
+ bands_plot_format = gnuplot
+ write_hr = .true.
