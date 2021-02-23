@@ -1,0 +1,85 @@
+--
+&inputepw
+  prefix      = 'SiC'
+  amass(1)    = 28.08550
+  amass(2)    = 12.01078
+  asr_typ     =  'crystal'
+  outdir      = './'
+
+  iverbosity  = 3
+
+  elph        = .true.
+  epbwrite    = .true.
+  epbread     = .false.
+  epwwrite    = .true.
+  epwread     = .false.
+
+  nbndsub     =  16
+
+  wannierize  = .true.
+  num_iter    = 300
+  ! (2) Valence + conduction bands
+  dis_froz_max    =  18 !6.5
+  dis_win_max     =  40.0
+  !! Atom-centred sp3-orbitals
+  proj(1)     = 'C:sp3'
+  proj(2)     = 'Si:sp3'
+
+  wdata(1) = 'bands_plot = .true.'
+  wdata(2) = 'begin kpoint_path'
+  wdata(3) = 'L 0.50 0.50 0.50 G 0.00 0.00 0.00'
+  wdata(4) = 'G 0.00 0.00 0.00 X 0.00 0.50 0.50'
+  wdata(5) = 'end kpoint_path'
+  wdata(6) = 'bands_plot_format = gnuplot'
+
+  elecselfen  = .false.
+  prtgkk      = .false.
+  phonselfen  = .false.
+  a2f         = .false.
+  
+  lpolar = .true. 
+  fsthick     = 2    ! 1.36056981 ! eV
+  temps      = 300 ! K (same as PRB 76, 165108)
+
+  degaussw    = 0.01 !eV
+
+  dvscf_dir   = '../phonons_soc2_newpseudo/save'
+  
+  !eig_read    = .true.
+  efermi_read  = .true.
+
+  fermi_energy = 9.292
+
+  band_plot   = .true.
+  !rand_q      = .true.
+  !rand_nq     =  15000 
+  filqf        = '/THL8/home/jwluo/filepool/meshes/LGXKG_50.txt'
+  filkf        = '/THL8/home/jwluo/filepool/meshes/LGXKG_50.txt' ! kqpt_G_0.15.txt
+
+  nk1         = 12
+  nk2         = 12
+  nk3         = 12
+
+  nq1         = 6
+  nq2         = 6
+  nq3         = 6
+
+ /
+
+      16 cartesian
+          0.000000000   0.000000000   0.000000000
+         -0.166666667   0.166666667  -0.166666667
+         -0.333333333   0.333333333  -0.333333333
+          0.500000000  -0.500000000   0.500000000
+          0.000000000   0.333333333   0.000000000
+         -0.166666667   0.500000000  -0.166666667
+          0.666666667  -0.333333333   0.666666667
+          0.500000000  -0.166666667   0.500000000
+          0.333333333   0.000000000   0.333333333
+         0.000000000   0.666666667   0.000000000
+         0.833333333  -0.166666667   0.833333333
+         0.666666667  -0.000000000   0.666666667
+         0.000000000  -1.000000000   0.000000000
+         0.666666667  -0.333333333   1.000000000
+         0.500000000  -0.166666667   0.833333333
+        -0.333333333  -1.000000000   0.000000000
